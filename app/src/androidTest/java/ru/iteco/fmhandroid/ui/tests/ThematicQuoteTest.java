@@ -68,7 +68,7 @@ public class ThematicQuoteTest {
     @Test
     @Story("TC - 52")
     @Description("Развернуть/свернуть тематическую цитату, во вкладке \"Love is all\", мобильного приложения \"Мобильный хоспис\" (Позитивный).")
-    public void expandThematicQuote() {
+    public void testExpandAndCollapseThematicQuote() {
         onView(isRoot()).perform(waitDisplayed(thematicQuoteSteps.getMissionImageButton(), 5000));
         thematicQuoteSteps.clickButtonThematicQuote();
         thematicQuoteSteps.checkTitleThematicQuote();

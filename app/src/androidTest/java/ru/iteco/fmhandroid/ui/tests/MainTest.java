@@ -70,7 +70,7 @@ public class MainTest {
     @Test
     @Story("TC - 12")
     @Description("Переход на вкладку \"Главная страница\" (Main) через главное меню мобильного приложения \"Мобильный хоспис\" (Позитивный).")
-    public void Main() {
+    public void testNavigateToMainPageThroughMenu() {
         onView(isRoot()).perform(waitDisplayed(mainSteps.getMainMenuButton(), 5000));
         mainSteps.clickButtonMainMenu();
         newsSteps.clickButtonNews();
@@ -84,7 +84,7 @@ public class MainTest {
     @Test
     @Story("TC - 13")
     @Description("Свернуть/развернуть вкладку \"Новости\" (News)  на  вкладке \"Главная страница\" (Main) мобильного приложения \"Мобильный хоспис\" (Позитивный).")
-    public void extendNews() {
+    public void testExpandAndCollapseNewsSection() {
         onView(isRoot()).perform(waitDisplayed(mainSteps.getButtonToExpandNews(), 5000));
         mainSteps.clickButtonToExpandNews();
         mainSteps.clickButtonToExpandNews();

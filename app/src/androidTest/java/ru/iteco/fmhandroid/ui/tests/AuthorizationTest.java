@@ -91,7 +91,7 @@ public class AuthorizationTest {
     @Test
     @Story("TC - 1")
     @Description("Авторизация в мобильном приложении \"Мобильный хоспис\" (Позитивный).")
-    public void successfulAuthorization() {
+    public void testSuccessfulLoginWithValidCredentials() {
         onView(isRoot()).perform(waitDisplayed(authorizationSteps.getLoginLayout(), 5000));
         authorizationSteps.textAuthorization();
         authorizationSteps.fillLoginField(getLogin());
@@ -108,7 +108,7 @@ public class AuthorizationTest {
     @Test
     @Story("TC - 2")
     @Description("Поле \"Логин\" (Login) пустое, при авторизации, в мобильном приложении \"Мобильный хоспис\" (Негативный).")
-    public void loginFieldIsEmpty() {
+    public void testLoginWithEmptyUsernameField() {
         onView(isRoot()).perform(waitDisplayed(authorizationSteps.getLoginLayout(), 5000));
         authorizationSteps.textAuthorization();
         authorizationSteps.fillLoginField("");
@@ -123,7 +123,7 @@ public class AuthorizationTest {
     @Test
     @Story("TC - 3")
     @Description("Поле \"Логин\" (Login) заполнено данными незарегистрированного пользователя, при авторизации, в мобильном приложении \"Мобильный хоспис\" (Негативный).")
-    public void loginFieldUnregisteredUser() {
+    public void testLoginWithUnregisteredUsername() {
         onView(isRoot()).perform(waitDisplayed(authorizationSteps.getLoginLayout(), 5000));
         authorizationSteps.textAuthorization();
         authorizationSteps.fillLoginField(getUnregisteredLogin());
@@ -138,7 +138,7 @@ public class AuthorizationTest {
     @Test
     @Story("TC - 4")
     @Description("Поле \"Логин\" (Login) состоит из спецсимволов, при авторизации, в мобильном приложении \"Мобильный хоспис\" (Негативный).")
-    public void loginFieldWithSpecialCharacters() {
+    public void testLoginWithSpecialCharactersInUsername() {
         onView(isRoot()).perform(waitDisplayed(authorizationSteps.getLoginLayout(), 5000));
         authorizationSteps.textAuthorization();
         authorizationSteps.fillLoginField(getLoginWithSpecialCharacters());
@@ -153,7 +153,7 @@ public class AuthorizationTest {
     @Test
     @Story("TC - 5")
     @Description("Поле \"Логин\" (Login) состоит из одного символа, при авторизации, в мобильном приложении \"Мобильный хоспис\" (Негативный).")
-    public void loginFieldOneLetter() {
+    public void testLoginWithSingleCharacterUsername() {
         onView(isRoot()).perform(waitDisplayed(authorizationSteps.getLoginLayout(), 5000));
         authorizationSteps.textAuthorization();
         authorizationSteps.fillLoginField(getOneLetterLogin());
@@ -168,7 +168,7 @@ public class AuthorizationTest {
     @Test
     @Story("TC - 6")
     @Description("Поле \"Логин\" (Login) состоит из букв разного регистра, при авторизации, в мобильном приложении \"Мобильный хоспис\" (Негативный).")
-    public void loginFieldLettersOfDifferentCase() {
+    public void testLoginWithMixedCaseUsername() {
         onView(isRoot()).perform(waitDisplayed(authorizationSteps.getLoginLayout(), 5000));
         authorizationSteps.textAuthorization();
         authorizationSteps.fillLoginField(getDifferentRegexLogin());
@@ -183,7 +183,7 @@ public class AuthorizationTest {
     @Test
     @Story("TC - 7")
     @Description("Поле \"Пароль\" (Password) пустое, при авторизации, в мобильном приложении \"Мобильный хоспис\" (Негативный).")
-    public void passwordFieldIsEmpty() {
+    public void testLoginWithEmptyPasswordField() {
         onView(isRoot()).perform(waitDisplayed(authorizationSteps.getLoginLayout(), 5000));
         authorizationSteps.textAuthorization();
         authorizationSteps.fillLoginField(getLogin());
@@ -198,7 +198,7 @@ public class AuthorizationTest {
     @Test
     @Story("TC - 8")
     @Description("Поле \"Пароль\" (Password) заполнено данными незарегистрированного пользователя, при авторизации, в мобильном приложении \"Мобильный хоспис\" (Негативный).")
-    public void passwordFieldUnregisteredUser() {
+    public void testLoginWithUnregisteredPassword() {
         onView(isRoot()).perform(waitDisplayed(authorizationSteps.getLoginLayout(), 5000));
         authorizationSteps.textAuthorization();
         authorizationSteps.fillLoginField(getLogin());
@@ -213,7 +213,7 @@ public class AuthorizationTest {
     @Test
     @Story("TC - 9")
     @Description("Поле \"Пароль\" (Password) состоит из спецсимволов, при авторизации, в мобильном приложении \"Мобильный хоспис\" (Негативный).")
-    public void passwordFieldWithSpecialCharacters() {
+    public void testLoginWithSpecialCharactersInPassword() {
         onView(isRoot()).perform(waitDisplayed(authorizationSteps.getLoginLayout(), 5000));
         authorizationSteps.textAuthorization();
         authorizationSteps.fillLoginField(getLogin());
@@ -228,7 +228,7 @@ public class AuthorizationTest {
     @Test
     @Story("TC - 10")
     @Description("Поле \"Пароль\" (Password) состоит из одного символа, при авторизации, в мобильном приложении \"Мобильный хоспис\" (Негативный)")
-    public void passwordFieldOneLetter() {
+    public void testLoginWithSingleCharacterPassword() {
         onView(isRoot()).perform(waitDisplayed(authorizationSteps.getLoginLayout(), 5000));
         authorizationSteps.textAuthorization();
         authorizationSteps.fillLoginField(getLogin());
@@ -243,7 +243,7 @@ public class AuthorizationTest {
     @Test
     @Story("TC - 11")
     @Description("Поле \"Пароль\" (Password) состоит из букв разного регистра, при авторизации, в мобильном приложении \"Мобильный хоспис\" (Негативный). ")
-    public void passwordFieldLettersOfDifferentCase() {
+    public void testLoginWithMixedCasePassword() {
         onView(isRoot()).perform(waitDisplayed(authorizationSteps.getLoginLayout(), 5000));
         authorizationSteps.textAuthorization();
         authorizationSteps.fillLoginField(getLogin());

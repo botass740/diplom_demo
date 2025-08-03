@@ -74,7 +74,7 @@ public class AboutTest {
     @Test
     @Story("TC - 53")
     @Description("Просмотр ссылки \"Политика конфиденциальности\" (Privacy policy) во вкладке \"О приложении\" (About) мобильного приложения \"Мобильный хоспис\" (Позитивный)")
-    public void watchingPrivacyPolicy() {
+    public void testViewPrivacyPolicyLink() {
         onView(isRoot()).perform(waitDisplayed(mainSteps.getMainMenuButton(), 5000));
         mainSteps.clickButtonMainMenu();
         aboutSteps.clickButtonAboutMainMenu();
@@ -87,7 +87,7 @@ public class AboutTest {
     @Test
     @Story("TC - 53")
     @Description("Просмотр ссылки \"Пользовательское соглашение\"  (Terms of use) во вкладке \"О приложении\" (About) мобильного приложения \"Мобильный хоспис\" (Позитивный).")
-    public void watchingTermsOfUse() {
+    public void testViewTermsOfUseLink() {
         onView(isRoot()).perform(waitDisplayed(mainSteps.getMainMenuButton(), 5000));
         mainSteps.clickButtonMainMenu();
         aboutSteps.clickButtonAboutMainMenu();
